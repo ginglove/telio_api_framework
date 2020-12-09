@@ -27,6 +27,7 @@ Resource          ./1_common/api_common/common.robot
 
 #### ROBOT KEYWORDS ####
 Resource     ./2_keywords/API_Keywords.robot
+Resource     ./2_keywords/LOS_API_Keywords.robot
 
 
 ### ROBOT TEST DATAS ###

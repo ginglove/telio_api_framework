@@ -12,7 +12,7 @@ Resource      ../imports.robot
 
 [POST][200] - Success - Create User
     [Arguments]       ${headers}             ${body}  
-    REST.post       ${api_url}/${get_list_user_url}
+    REST.post       ${api_url}/${post_register_user}
         ...     headers=${headers}
         ...     body=${body}
     rest extract

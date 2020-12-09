@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.8.5 on linux)" generated="20201102 17:48:02.988" rpa="false">
+<suite id="s1" name="3 Test Cases" source="/home/giang/Documents/telio_api_example/3_test_cases">
+<suite id="s1-s1" name="Fake Test" source="/home/giang/Documents/telio_api_example/3_test_cases/fake_test.robot">
+<test id="s1-s1-t1" name="Test title">
+<kw name="[GET][200] - Success - Get List User" library="API_Keywords">
+<msg timestamp="20201102 17:48:03.294" level="TRACE">Arguments: [  ]</msg>
+<kw name="Get" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<arguments>
+<arg>${api_url}/${get_list_user_url}</arg>
+</arguments>
+<msg timestamp="20201102 17:48:03.294" level="TRACE">Arguments: [ 'https://reqres.in/api/users?page=2' ]</msg>
+<msg timestamp="20201102 17:48:03.296" level="DEBUG">Starting new HTTPS connection (1): reqres.in:443</msg>
+<msg timestamp="20201102 17:48:03.831" level="DEBUG">https://reqres.in:443 "GET /api/users?page=2 HTTP/1.1" 200 None</msg>
+<msg timestamp="20201102 17:48:03.841" level="TRACE">Return: {'body': {'ad': {'company': 'StatusCode Weekly', 'text': 'A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.', 'url': 'http://statuscode.org/'},
+          'data': [{'avatar': 'https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg', 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'id': 7, 'last_name': 'Lawson'},
+                   {'avatar': 'https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg', 'email': 'lindsay.ferguson@reqres.in', 'first_name': 'Lindsay', 'id': 8, 'last_name': 'Ferguson'},
+                   {'avatar': 'https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg', 'email': 'tobias.funke@reqres.in', 'first_name': 'Tobias', 'id': 9, 'last_name': 'Funke'},
+                   {'avatar': 'https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg', 'email': 'byron.fields@reqres.in', 'first_name': 'Byron', 'id': 10, 'last_name': 'Fields'},
+                   {'avatar': 'https://s3.amazonaws.com/uifaces/faces/twitter/mrmoiree/128.jpg', 'email': 'george.edwards@reqres.in', 'first_name': 'George', 'id': 11, 'last_name': 'Edwards'},
+                   {'avatar': 'https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg', 'email': 'rachel.howell@reqres.in', 'first_name': 'Rachel', 'id': 12, 'last_name': 'Howell'}],
+          'page': 2,
+          'per_page': 6,
+          'total': 12,
+          'total_pages': 2},
+ 'headers': {'Access-Control-Allow-Origin': '*',
+             'Age': '5217',
+             'CF-Cache-Status': 'HIT',
+             'CF-RAY': '5ebd47ef7f60e46e-SEA',
+             'Cache-Control': 'max-age=14400',
+             'Connection': 'keep-alive',
+             'Content-Encoding': 'gzip',
+             'Content-Type': 'application/json; charset=utf-8',
+             'Date': 'Mon, 02 Nov 2020 10:48:03 GMT',
+             'Etag': 'W/"4dd-IPv5LdOOb6s5S9E3i59wBCJ1k/0"',
+             'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+             'NEL': '{"report_to":"cf-nel","max_age":604800}',
+             'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=M3GmkDJ38muvlWdF8Caoy%2FWdzrorZmE7CKzpeb8yETdRnMAKXS9aINSmv43gF8krngxj4VpStA%2B%2B9r9Qw26%2F2kwm9JoUhNnbPcs%3D"}],"group":"cf-nel","max_age":604800}',
+             'Server': 'cloudflare',
+             'Set-Cookie': '__cfduid=d4c384f78b9e3e0cb3321eb9397fae34c1604314083; expires=Wed, 02-Dec-20 10:48:03 GMT; path=/; domain=.reqres.in; HttpOnly; SameSite=Lax; Secure',
+             'Transfer-Encoding': 'chunked',
+             'Vary': 'Accept-Encoding',
+             'Via': '1.1 vegur',
+             'X-Powered-By': 'Express',
+             'cf-request-id': '062a2b49a70000e46e68850000000001'},
+ 'seconds': 0.536242,
+ 'status': 200}</msg>
+<status status="PASS" starttime="20201102 17:48:03.294" endtime="20201102 17:48:03.842"></status>
+</kw>
+<kw name="Rest Extract" library="rest_util">
+<msg timestamp="20201102 17:48:03.842" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20201102 17:48:03.842" level="INFO">
+{
+    "request": {
+        "method": "GET",
+        "url": "https://reqres.in/api/users",
+        "scheme": "https",
+        "netloc": "reqres.in",
+        "path": "/api/users",
+        "query": {
+            "page": "2"
+        },
+        "body": null,
+        "headers": {
+            "Accept": "application/json, */*",
+            "Content-Type": "application/json",
+            "User-Agent": "RESTinstance/1.0.0rc4"
+        },
+        "proxies": {},
+        "timeout": [
+            null,
+            null
+        ],
+        "cert": null,
+        "sslVerify": false,
+        "allowRedirects": true,
+        "timestamp": {
+            "utc": "2020-11-02T10:48:03.832058+00:00",
+            "local": "2020-11-02T17:48:03.832058+07:00"
+        }
+    },
+    "response": {
+        "seconds": 0.536242,
+        "status": 200,
+        "body": {
+            "page": 2,
+            "per_page": 6,
+            "total": 12,
+            "total_pages": 2,
+            "data": [
+                {
+                    "id": 7,
+                    "email": "michael.lawson@reqres.in",
+                    "first_name": "Michael",
+                    "last_name": "Lawson",
+                    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg"
+                },
+                {
+                    "id": 8,
+                    "email": "lindsay.ferguson@reqres.in",
+                    "first_name": "Lindsay",
+                    "last_name": "Ferguson",
+                    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg"
+                },
+                {
+                    "id": 9,
+                    "email": "tobias.funke@reqres.in",
+                    "first_name": "Tobias",
+                    "last_name": "Funke",
+                    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg"
+                },
+                {
+                    "id": 10,
+                    "email": "byron.fields@reqres.in",
+                    "first_name": "Byron",
+                    "last_name": "Fields",
+                    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg"
+                },
+                {
+                    "id": 11,
+                    "email": "george.edwards@reqres.in",
+                    "first_name": "George",
+                    "last_name": "Edwards",
+                    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mrmoiree/128.jpg"
+                },
+                {
+                    "id": 12,
+                    "email": "rachel.howell@reqres.in",
+                    "first_name": "Rachel",
+                    "last_name": "Howell",
+                    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg"
+                }
+            ],
+            "ad": {
+                "company": "StatusCode Weekly",
+                "url": "http://statuscode.org/",
+                "text": "A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things."
+            }
+        },
+        "headers": {
+            "Date": "Mon, 02 Nov 2020 10:48:03 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": "__cfduid=d4c384f78b9e3e0cb3321eb9397fae34c1604314083; expires=Wed, 02-Dec-20 10:48:03 GMT; path=/; domain=.reqres.in; HttpOnly; SameSite=Lax; Secure",
+            "X-Powered-By": "Express",
+            "Access-Control-Allow-Origin": "*",
+            "Etag": "W/\"4dd-IPv5LdOOb6s5S9E3i59wBCJ1k/0\"",
+            "Via": "1.1 vegur",
+            "Cache-Control": "max-age=14400",
+            "CF-Cache-Status": "HIT",
+            "Age": "5217",
+            "cf-request-id": "062a2b49a70000e46e68850000000001",
+            "Expect-CT": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+            "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report?s=M3GmkDJ38muvlWdF8Caoy%2FWdzrorZmE7CKzpeb8yETdRnMAKXS9aINSmv43gF8krngxj4VpStA%2B%2B9r9Qw26%2F2kwm9JoUhNnbPcs%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+            "NEL": "{\"report_to\":\"cf-nel\",\"max_age\":604800}",
+            "Vary": "Accept-Encoding",
+            "Server": "cloudflare",
+            "CF-RAY": "5ebd47ef7f60e46e-SEA",
+            "Content-Encoding": "gzip"
+        }
+    }
+}</msg>
+<msg timestamp="20201102 17:48:03.843" level="TRACE">Return: {'request': {'allowRedirects': True,
+             'body': None,
+             'cert': None,
+             'headers': {'Accept': 'application/json, */*', 'Content-Type': 'application/json', 'User-Agent': 'RESTinstance/1.0.0rc4'},
+             'method': 'GET',
+             'netloc': 'reqres.in',
+             'path': '/api/users',
+             'proxies': {},
+             'query': OrderedDict([('page', '2')]),
+             'scheme': 'https',
+             'sslVerify': False,
+             'timeout': [None, None],
+             'timestamp': {'local': '2020-11-02T17:48:03.832058+07:00', 'utc': '2020-11-02T10:48:03.832058+00:00'},
+             'url': 'https://reqres.in/api/users'},
+ 'response': {'body': {'ad': {'company': 'StatusCode Weekly', 'text': 'A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.', 'url': 'http://statuscode.org/'},
+                       'data': [{'avatar': 'https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg', 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'id': 7, 'last_name': 'Lawson'},
+                                {'avatar': 'https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg', 'email': 'lindsay.ferguson@reqres.in', 'first_name': 'Lindsay', 'id': 8, 'last_name': 'Ferguson'},
+                                {'avatar': 'https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg', 'email': 'tobias.funke@reqres.in', 'first_name': 'Tobias', 'id': 9, 'last_name': 'Funke'},
+                                {'avatar': 'https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg', 'email': 'byron.fields@reqres.in', 'first_name': 'Byron', 'id': 10, 'last_name': 'Fields'},
+                                {'avatar': 'https://s3.amazonaws.com/uifaces/faces/twitter/mrmoiree/128.jpg', 'email': 'george.edwards@reqres.in', 'first_name': 'George', 'id': 11, 'last_name': 'Edwards'},
+                                {'avatar': 'https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg', 'email': 'rachel.howell@reqres.in', 'first_name': 'Rachel', 'id': 12, 'last_name': 'Howell'}],
+                       'page': 2,
+                       'per_page': 6,
+                       'total': 12,
+                       'total_pages': 2},
+              'headers': {'Access-Control-Allow-Origin': '*',
+                          'Age': '5217',
+                          'CF-Cache-Status': 'HIT',
+                          'CF-RAY': '5ebd47ef7f60e46e-SEA',
+                          'Cache-Control': 'max-age=14400',
+                          'Connection': 'keep-alive',
+                          'Content-Encoding': 'gzip',
+                          'Content-Type': 'application/json; charset=utf-8',
+                          'Date': 'Mon, 02 Nov 2020 10:48:03 GMT',
+                          'Etag': 'W/"4dd-IPv5LdOOb6s5S9E3i59wBCJ1k/0"',
+                          'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+                          'NEL': '{"report_to":"cf-nel","max_age":604800}',
+                          'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=M3GmkDJ38muvlWdF8Caoy%2FWdzrorZmE7CKzpeb8yETdRnMAKXS9aINSmv43gF8krngxj4VpStA%2B%2B9r9Qw26%2F2kwm9JoUhNnbPcs%3D"}],"group":"cf-nel","max_age":604800}',
+                          'Server': 'cloudflare',
+                          'Set-Cookie': '__cfduid=d4c384f78b9e3e0cb3321eb9397fae34c1604314083; expires=Wed, 02-Dec-20 10:48:03 GMT; path=/; domain=.reqres.in; HttpOnly; SameSite=Lax; Secure',
+                          'Transfer-Encoding': 'chunked',
+                          'Vary': 'Accept-Encoding',
+                          'Via': '1.1 vegur',
+                          'X-Powered-By': 'Express',
+                          'cf-request-id': '062a2b49a70000e46e68850000000001'},
+              'seconds': 0.536242,
+              'status': 200}}</msg>
+<status status="PASS" starttime="20201102 17:48:03.842" endtime="20201102 17:48:03.843"></status>
+</kw>
+<kw name="[common][verify] - Http status code is &quot;200&quot;" library="common">
+<msg timestamp="20201102 17:48:03.844" level="TRACE">Arguments: [ ${code}='200' ]</msg>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>response status</arg>
+<arg>${code}</arg>
+</arguments>
+<msg timestamp="20201102 17:48:03.844" level="TRACE">Arguments: [ 'response status' | '200' ]</msg>
+<msg timestamp="20201102 17:48:03.844" level="TRACE">Return: [200]</msg>
+<status status="PASS" starttime="20201102 17:48:03.844" endtime="20201102 17:48:03.844"></status>
+</kw>
+<msg timestamp="20201102 17:48:03.844" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20201102 17:48:03.843" endtime="20201102 17:48:03.845"></status>
+</kw>
+<msg timestamp="20201102 17:48:03.845" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20201102 17:48:03.294" endtime="20201102 17:48:03.845"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>10</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${random_name}</var>
+</assign>
+<msg timestamp="20201102 17:48:03.845" level="TRACE">Arguments: [ 10 | '[LETTERS]' ]</msg>
+<msg timestamp="20201102 17:48:03.845" level="TRACE">Return: 'aRHoaQheWj'</msg>
+<msg timestamp="20201102 17:48:03.845" level="INFO">${random_name} = aRHoaQheWj</msg>
+<status status="PASS" starttime="20201102 17:48:03.845" endtime="20201102 17:48:03.845"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${random_job}</var>
+</assign>
+<msg timestamp="20201102 17:48:03.845" level="TRACE">Arguments: [ 5 | '[LETTERS]' ]</msg>
+<msg timestamp="20201102 17:48:03.845" level="TRACE">Return: 'YPAew'</msg>
+<msg timestamp="20201102 17:48:03.845" level="INFO">${random_job} = YPAew</msg>
+<status status="PASS" starttime="20201102 17:48:03.845" endtime="20201102 17:48:03.845"></status>
+</kw>
+<kw name="[Pre_Request] - Create User - body" library="API_Keywords">
+<arguments>
+<arg>$.name= ${random_name}</arg>
+<arg>$.job=${random_job}</arg>
+</arguments>
+<msg timestamp="20201102 17:48:03.846" level="TRACE">Arguments: [ ${output}='body' | ${remove_null}=True | ${remove_empty}=True | &amp;{arg_dic}={'$.job': 'YPAew', '$.name': ' aRHoaQheWj'} ]</msg>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>{</arg>
+<arg>"name": "string",</arg>
+<arg>"job": "string"</arg>
+<arg>}</arg>
+</arguments>
+<assign>
+<var>${schema}</var>
+</assign>
+<msg timestamp="20201102 17:48:03.846" level="TRACE">Arguments: [ 'SEPARATOR=' | '{' | '"name": "string",' | '"job": "string"' | '}' ]</msg>
+<msg timestamp="20201102 17:48:03.846" level="TRACE">Return: '{"name": "string","job": "string"}'</msg>
+<msg timestamp="20201102 17:48:03.846" level="INFO">${schema} = {"name": "string","job": "string"}</msg>
+<status status="PASS" starttime="20201102 17:48:03.846" endtime="20201102 17:48:03.846"></status>
+</kw>
+<kw name="Generate Json" library="json_generator">
+<arguments>
+<arg>json_schema=${schema}</arg>
+<arg>args=${arg_dic}</arg>
+<arg>remove_null=${remove_null}</arg>
+<arg>remove_empty=${remove_empty}</arg>
+</arguments>
+<assign>
+<var>${body}</var>
+</assign>
+<msg timestamp="20201102 17:48:03.846" level="TRACE">Arguments: [ json_schema='{"name": "string","job": "string"}' | args={'$.job': 'YPAew', '$.name': ' aRHoaQheWj'} | remove_null=True | remove_empty=True ]</msg>
+<msg timestamp="20201102 17:48:03.847" level="TRACE">Return: '{\n    "job": "YPAew",\n    "name": " aRHoaQheWj"\n}'</msg>
+<msg timestamp="20201102 17:48:03.847" level="INFO">${body} = {
+    "job": "YPAew",
+    "name": " aRHoaQheWj"
+}</msg>
+<status status="PASS" starttime="20201102 17:48:03.846" endtime="20201102 17:48:03.847"></status>
+</kw>
+<kw name="[common] - Set variable" library="common">
+<arguments>
+<arg>name=${output}</arg>
+<arg>value=${body}</arg>
+</arguments>
+<msg timestamp="20201102 17:48:03.847" level="TRACE">Arguments: [ ${name}='body' | ${value}='{\n    "job": "YPAew",\n    "name": " aRHoaQheWj"\n}' ]</msg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Should Match</arg>
+<arg>${name}</arg>
+<arg>suite_*</arg>
+</arguments>
+<assign>
+<var>${is_suite_var}</var>
+</assign>
+<msg timestamp="20201102 17:48:03.847" level="TRACE">Arguments: [ 'Should Match' | '${name}' | 'suite_*' ]</msg>
+<kw name="Should Match" library="BuiltIn">
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>suite_*</arg>
+</arguments>
+<msg timestamp="20201102 17:48:03.848" level="TRACE">Arguments: [ 'body' | 'suite_*' ]</msg>
+<msg timestamp="20201102 17:48:03.848" level="FAIL">'body' does not match 'suite_*'</msg>
+<msg timestamp="20201102 17:48:03.848" level="DEBUG">Traceback (most recent call last):
+  None</msg>
+<status status="FAIL" starttime="20201102 17:48:03.848" endtime="20201102 17:48:03.848"></status>
+</kw>
+<msg timestamp="20201102 17:48:03.848" level="TRACE">Return: False</msg>
+<msg timestamp="20201102 17:48:03.848" level="INFO">${is_suite_var} = False</msg>
+<status status="PASS" starttime="20201102 17:48:03.847" endtime="20201102 17:48:03.848"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Variable Should Exist</arg>
+<arg>${TEST_NAME}</arg>
+</arguments>
+<assign>
+<var>${has_test_case}</var>
+</assign>
+<msg timestamp="20201102 17:48:03.848" level="TRACE">Arguments: [ 'Variable Should Exist' | '${TEST_NAME}' ]</msg>
+<kw name="Variable Should Exist" library="BuiltIn">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${TEST_NAME}</arg>
+</arguments>
+<msg timestamp="20201102 17:48:03.848" level="TRACE">Arguments: [ '${TEST_NAME}' ]</msg>
+<msg timestamp="20201102 17:48:03.848" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20201102 17:48:03.848" endtime="20201102 17:48:03.848"></status>
+</kw>
+<msg timestamp="20201102 17:48:03.849" level="TRACE">Return: True</msg>
+<msg timestamp="20201102 17:48:03.849" level="INFO">${has_test_case} = True</msg>
+<status status="PASS" starttime="20201102 17:48:03.848" endtime="20201102 17:48:03.849"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${is_suite_var}'=='${True}' or '${has_test_case}'=='${False}'</arg>
+<arg>set suite variable</arg>
+<arg>\${${name}}</arg>
+<arg>${value}</arg>
+<arg>ELSE</arg>
+<arg>set test variable</arg>
+<arg>\${${name}}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20201102 17:48:03.849" level="TRACE">Arguments: [ "'False'=='True' or 'True'=='False'" | 'set suite variable' | '\\${${name}}' | '${value}' | 'ELSE' | 'set test variable' | '\\${${name}}' | '${value}' ]</msg>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>\${${name}}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20201102 17:48:03.849" level="TRACE">Arguments: [ '\\${${name}}' | '${value}' ]</msg>
+<msg timestamp="20201102 17:48:03.849" level="INFO">${body} = {
+    "job": "YPAew",
+    "name": " aRHoaQheWj"
+}</msg>
+<msg timestamp="20201102 17:48:03.849" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20201102 17:48:03.849" endtime="20201102 17:48:03.849"></status>
+</kw>
+<msg timestamp="20201102 17:48:03.849" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20201102 17:48:03.849" endtime="20201102 17:48:03.849"></status>
+</kw>
+<msg timestamp="20201102 17:48:03.849" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20201102 17:48:03.847" endtime="20201102 17:48:03.849"></status>
+</kw>
+<msg timestamp="20201102 17:48:03.849" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20201102 17:48:03.846" endtime="20201102 17:48:03.850"></status>
+</kw>
+<kw name="[common][pre_request] - authorization headers" library="API_Keywords">
+<msg timestamp="20201102 17:48:03.850" level="TRACE">Arguments: [ ${content_type}='application/json' | ${output}='headers' ]</msg>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>content-type=${content_type}</arg>
+</arguments>
+<assign>
+<var>${headers}</var>
+</assign>
+<msg timestamp="20201102 17:48:03.850" level="TRACE">Arguments: [ 'content-type=${content_type}' ]</msg>
+<msg timestamp="20201102 17:48:03.850" level="TRACE">Return: {'content-type': 'application/json'}</msg>
+<msg timestamp="20201102 17:48:03.850" level="INFO">${headers} = {'content-type': 'application/json'}</msg>
+<status status="PASS" starttime="20201102 17:48:03.850" endtime="20201102 17:48:03.850"></status>
+</kw>
+<kw name="[common] - Set variable" library="common">
+<arguments>
+<arg>name=${output}</arg>
+<arg>value=${headers}</arg>
+</arguments>
+<msg timestamp="20201102 17:48:03.850" level="TRACE">Arguments: [ ${name}='headers' | ${value}={'content-type': 'application/json'} ]</msg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Should Match</arg>
+<arg>${name}</arg>
+<arg>suite_*</arg>
+</arguments>
+<assign>
+<var>${is_suite_var}</var>
+</assign>
+<msg timestamp="20201102 17:48:03.851" level="TRACE">Arguments: [ 'Should Match' | '${name}' | 'suite_*' ]</msg>
+<kw name="Should Match" library="BuiltIn">
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>suite_*</arg>
+</arguments>
+<msg timestamp="20201102 17:48:03.851" level="TRACE">Arguments: [ 'headers' | 'suite_*' ]</msg>
+<msg timestamp="20201102 17:48:03.851" level="FAIL">'headers' does not match 'suite_*'</msg>
+<msg timestamp="20201102 17:48:03.851" level="DEBUG">Traceback (most recent call last):
+  None</msg>
+<status status="FAIL" starttime="20201102 17:48:03.851" endtime="20201102 17:48:03.851"></status>
+</kw>
+<msg timestamp="20201102 17:48:03.851" level="TRACE">Return: False</msg>
+<msg timestamp="20201102 17:48:03.851" level="INFO">${is_suite_var} = False</msg>
+<status status="PASS" starttime="20201102 17:48:03.851" endtime="20201102 17:48:03.851"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Variable Should Exist</arg>
+<arg>${TEST_NAME}</arg>
+</arguments>
+<assign>
+<var>${has_test_case}</var>
+</assign>
+<msg timestamp="20201102 17:48:03.851" level="TRACE">Arguments: [ 'Variable Should Exist' | '${TEST_NAME}' ]</msg>
+<kw name="Variable Should Exist" library="BuiltIn">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${TEST_NAME}</arg>
+</arguments>
+<msg timestamp="20201102 17:48:03.852" level="TRACE">Arguments: [ '${TEST_NAME}' ]</msg>
+<msg timestamp="20201102 17:48:03.852" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20201102 17:48:03.852" endtime="20201102 17:48:03.852"></status>
+</kw>
+<msg timestamp="20201102 17:48:03.852" level="TRACE">Return: True</msg>
+<msg timestamp="20201102 17:48:03.852" level="INFO">${has_test_case} = True</msg>
+<status status="PASS" starttime="20201102 17:48:03.851" endtime="20201102 17:48:03.852"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${is_suite_var}'=='${True}' or '${has_test_case}'=='${False}'</arg>
+<arg>set suite variable</arg>
+<arg>\${${name}}</arg>
+<arg>${value}</arg>
+<arg>ELSE</arg>
+<arg>set test variable</arg>
+<arg>\${${name}}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20201102 17:48:03.852" level="TRACE">Arguments: [ "'False'=='True' or 'True'=='False'" | 'set suite variable' | '\\${${name}}' | '${value}' | 'ELSE' | 'set test variable' | '\\${${name}}' | '${value}' ]</msg>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>\${${name}}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20201102 17:48:03.853" level="TRACE">Arguments: [ '\\${${name}}' | '${value}' ]</msg>
+<msg timestamp="20201102 17:48:03.853" level="INFO">${headers} = {'content-type': 'application/json'}</msg>
+<msg timestamp="20201102 17:48:03.853" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20201102 17:48:03.853" endtime="20201102 17:48:03.853"></status>
+</kw>
+<msg timestamp="20201102 17:48:03.853" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20201102 17:48:03.852" endtime="20201102 17:48:03.853"></status>
+</kw>
+<msg timestamp="20201102 17:48:03.853" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20201102 17:48:03.850" endtime="20201102 17:48:03.853"></status>
+</kw>
+<msg timestamp="20201102 17:48:03.853" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20201102 17:48:03.850" endtime="20201102 17:48:03.853"></status>
+</kw>
+<kw name="[POST][200] - Success - Create User" library="API_Keywords">
+<arguments>
+<arg>headers=${headers}</arg>
+<arg>body=${body}</arg>
+</arguments>
+<msg timestamp="20201102 17:48:03.854" level="TRACE">Arguments: [ ${headers}={'content-type': 'application/json'} | ${body}='{\n    "job": "YPAew",\n    "name": " aRHoaQheWj"\n}' ]</msg>
+<kw name="Post" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_url}/${get_list_user_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>body=${body}</arg>
+</arguments>
+<msg timestamp="20201102 17:48:03.854" level="TRACE">Arguments: [ 'https://reqres.in/api/users?page=2' | headers={'content-type': 'application/json'} | body='{\n    "job": "YPAew",\n    "name": " aRHoaQheWj"\n}' ]</msg>
+<msg timestamp="20201102 17:48:03.856" level="DEBUG">Starting new HTTPS connection (1): reqres.in:443</msg>
+<msg timestamp="20201102 17:48:04.450" level="DEBUG">https://reqres.in:443 "POST /api/users?page=2 HTTP/1.1" 201 85</msg>
+<msg timestamp="20201102 17:48:04.451" level="TRACE">Return: {'body': {'createdAt': '2020-11-02T10:48:04.334Z', 'id': '28', 'job': 'YPAew', 'name': ' aRHoaQheWj'},
+ 'headers': {'Access-Control-Allow-Origin': '*',
+             'CF-Cache-Status': 'DYNAMIC',
+             'CF-RAY': '5ebd47f01fae094a-HAN',
+             'Connection': 'keep-alive',
+             'Content-Length': '85',
+             'Content-Type': 'application/json; charset=utf-8',
+             'Date': 'Mon, 02 Nov 2020 10:48:04 GMT',
+             'Etag': 'W/"55-c4jAZTE1P9d/XdXhZKzvllzDCao"',
+             'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+             'NEL': '{"report_to":"cf-nel","max_age":604800}',
+             'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=u%2B9KlzW3fxqhaZY2YngbIZQXNIlVfxSndmCVdnwDNE%2FNXTkT3aRnGQObViLl0RcbWwQ2ULk5W5x%2BmI0kl0A9vyDkOG4HwWCsZdc%3D"}],"group":"cf-nel","max_age":604800}',
+             'Server': 'cloudflare',
+             'Set-Cookie': '__cfduid=d38e3c0d6fb106fa810d8fd5685528b301604314083; expires=Wed, 02-Dec-20 10:48:03 GMT; path=/; domain=.reqres.in; HttpOnly; SameSite=Lax; Secure',
+             'Via': '1.1 vegur',
+             'X-Powered-By': 'Express',
+             'cf-request-id': '062a2b4a0c0000094acf13b000000001'},
+ 'seconds': 0.594661,
+ 'status': 201}</msg>
+<status status="PASS" starttime="20201102 17:48:03.854" endtime="20201102 17:48:04.451"></status>
+</kw>
+<kw name="Rest Extract" library="rest_util">
+<msg timestamp="20201102 17:48:04.452" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20201102 17:48:04.452" level="INFO">
+{
+    "request": {
+        "method": "POST",
+        "url": "https://reqres.in/api/users?page=2",
+        "scheme": "https",
+        "netloc": "reqres.in",
+        "path": "/api/users",
+        "query": {},
+        "body": {
+            "job": "YPAew",
+            "name": " aRHoaQheWj"
+        },
+        "headers": {
+            "Accept": "application/json, */*",
+            "Content-Type": "application/json",
+            "User-Agent": "RESTinstance/1.0.0rc4",
+            "content-type": "application/json"
+        },
+        "proxies": {},
+        "timeout": [
+            null,
+            null
+        ],
+        "cert": null,
+        "sslVerify": false,
+        "allowRedirects": true,
+        "timestamp": {
+            "utc": "2020-11-02T10:48:04.450637+00:00",
+            "local": "2020-11-02T17:48:04.450637+07:00"
+        }
+    },
+    "response": {
+        "seconds": 0.594661,
+        "status": 201,
+        "body": {
+            "job": "YPAew",
+            "name": " aRHoaQheWj",
+            "id": "28",
+            "createdAt": "2020-11-02T10:48:04.334Z"
+        },
+        "headers": {
+            "Date": "Mon, 02 Nov 2020 10:48:04 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Content-Length": "85",
+            "Connection": "keep-alive",
+            "Set-Cookie": "__cfduid=d38e3c0d6fb106fa810d8fd5685528b301604314083; expires=Wed, 02-Dec-20 10:48:03 GMT; path=/; domain=.reqres.in; HttpOnly; SameSite=Lax; Secure",
+            "X-Powered-By": "Express",
+            "Access-Control-Allow-Origin": "*",
+            "Etag": "W/\"55-c4jAZTE1P9d/XdXhZKzvllzDCao\"",
+            "Via": "1.1 vegur",
+            "CF-Cache-Status": "DYNAMIC",
+            "cf-request-id": "062a2b4a0c0000094acf13b000000001",
+            "Expect-CT": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+            "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report?s=u%2B9KlzW3fxqhaZY2YngbIZQXNIlVfxSndmCVdnwDNE%2FNXTkT3aRnGQObViLl0RcbWwQ2ULk5W5x%2BmI0kl0A9vyDkOG4HwWCsZdc%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+            "NEL": "{\"report_to\":\"cf-nel\",\"max_age\":604800}",
+            "Server": "cloudflare",
+            "CF-RAY": "5ebd47f01fae094a-HAN"
+        }
+    }
+}</msg>
+<msg timestamp="20201102 17:48:04.452" level="TRACE">Return: {'request': {'allowRedirects': True,
+             'body': {'job': 'YPAew', 'name': ' aRHoaQheWj'},
+             'cert': None,
+             'headers': {'Accept': 'application/json, */*', 'Content-Type': 'application/json', 'User-Agent': 'RESTinstance/1.0.0rc4', 'content-type': 'application/json'},
+             'method': 'POST',
+             'netloc': 'reqres.in',
+             'path': '/api/users',
+             'proxies': {},
+             'query': {},
+             'scheme': 'https',
+             'sslVerify': False,
+             'timeout': [None, None],
+             'timestamp': {'local': '2020-11-02T17:48:04.450637+07:00', 'utc': '2020-11-02T10:48:04.450637+00:00'},
+             'url': 'https://reqres.in/api/users?page=2'},
+ 'response': {'body': {'createdAt': '2020-11-02T10:48:04.334Z', 'id': '28', 'job': 'YPAew', 'name': ' aRHoaQheWj'},
+              'headers': {'Access-Control-Allow-Origin': '*',
+                          'CF-Cache-Status': 'DYNAMIC',
+                          'CF-RAY': '5ebd47f01fae094a-HAN',
+                          'Connection': 'keep-alive',
+                          'Content-Length': '85',
+                          'Content-Type': 'application/json; charset=utf-8',
+                          'Date': 'Mon, 02 Nov 2020 10:48:04 GMT',
+                          'Etag': 'W/"55-c4jAZTE1P9d/XdXhZKzvllzDCao"',
+                          'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+                          'NEL': '{"report_to":"cf-nel","max_age":604800}',
+                          'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=u%2B9KlzW3fxqhaZY2YngbIZQXNIlVfxSndmCVdnwDNE%2FNXTkT3aRnGQObViLl0RcbWwQ2ULk5W5x%2BmI0kl0A9vyDkOG4HwWCsZdc%3D"}],"group":"cf-nel","max_age":604800}',
+                          'Server': 'cloudflare',
+                          'Set-Cookie': '__cfduid=d38e3c0d6fb106fa810d8fd5685528b301604314083; expires=Wed, 02-Dec-20 10:48:03 GMT; path=/; domain=.reqres.in; HttpOnly; SameSite=Lax; Secure',
+                          'Via': '1.1 vegur',
+                          'X-Powered-By': 'Express',
+                          'cf-request-id': '062a2b4a0c0000094acf13b000000001'},
+              'seconds': 0.594661,
+              'status': 201}}</msg>
+<status status="PASS" starttime="20201102 17:48:04.452" endtime="20201102 17:48:04.453"></status>
+</kw>
+<kw name="[common][verify] - Http status code is &quot;201&quot;" library="common">
+<msg timestamp="20201102 17:48:04.453" level="TRACE">Arguments: [ ${code}='201' ]</msg>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>response status</arg>
+<arg>${code}</arg>
+</arguments>
+<msg timestamp="20201102 17:48:04.454" level="TRACE">Arguments: [ 'response status' | '201' ]</msg>
+<msg timestamp="20201102 17:48:04.455" level="TRACE">Return: [201]</msg>
+<status status="PASS" starttime="20201102 17:48:04.454" endtime="20201102 17:48:04.455"></status>
+</kw>
+<msg timestamp="20201102 17:48:04.455" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20201102 17:48:04.453" endtime="20201102 17:48:04.455"></status>
+</kw>
+<msg timestamp="20201102 17:48:04.455" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20201102 17:48:03.854" endtime="20201102 17:48:04.455"></status>
+</kw>
+<status status="PASS" starttime="20201102 17:48:03.294" endtime="20201102 17:48:04.455" critical="yes"></status>
+</test>
+<doc>Suite description</doc>
+<status status="PASS" starttime="20201102 17:48:03.002" endtime="20201102 17:48:04.456"></status>
+</suite>
+<status status="PASS" starttime="20201102 17:48:02.989" endtime="20201102 17:48:04.457"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="3 Test Cases">3 Test Cases</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Fake Test">3 Test Cases.Fake Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -33,7 +33,12 @@ Resource      ../imports.robot
         ...     remove_empty=${remove_empty}
     [common] - Set variable       name=${output}      value=${body}
 
-[common][pre_request] - authorization headers
+[common][pre_request] - Content-type headers
     [Arguments]  ${content_type}=application/json    ${output}=headers
     ${headers}    create dictionary   content-type=${content_type}
+    [common] - Set variable    name=${output}    value=${headers}
+
+[common][pre_request] - Content-type and Accept headers
+    [Arguments]  ${content_type}=application/json    ${Accept}=application/json   ${output}=headers
+    ${headers}    create dictionary   content-type=${content_type}      Accept=${Accept}
     [common] - Set variable    name=${output}    value=${headers}
